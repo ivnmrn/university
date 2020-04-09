@@ -20,16 +20,16 @@ typedef struct {
     int numPersonsTrip;
 } tFairgroundRide;
 
-void readFairgroundRideAccess() {
-    printf("ACCES HEIGHT, LESSTHAN100 (0-FORBIDDEN,1-ALLOWED_WITH_COMPANION, 2 -ALLOWED):\n");
-    scanf("%d", (fRide1->accessHeight));
-    printf("ACCES HEIGHT, BETWEEN100_120 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2 -ALLOWED):\n");
-    scanf("%d", (fRide1->accessHeight));
-    printf("ACCES HEIGHT, BETWEEN120_140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-allowed):\n");
-    scanf("%d", (fRide1->accessHeight));
-    printf("ACCES HEIGHT, GREATERTHAN140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-allowed):\n");
-    scanf("%d", (fRide1->accessHeight));
-}
+// void readFairgroundRideAccess() {
+//     printf("ACCES HEIGHT, LESSTHAN100 (0-FORBIDDEN,1-ALLOWED_WITH_COMPANION, 2 -ALLOWED):\n");
+//     scanf("%d", (fRide1->accessHeight));
+//     printf("ACCES HEIGHT, BETWEEN100_120 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2 -ALLOWED):\n");
+//     scanf("%d", (fRide1->accessHeight));
+//     printf("ACCES HEIGHT, BETWEEN120_140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-allowed):\n");
+//     scanf("%d", (fRide1->accessHeight));
+//     printf("ACCES HEIGHT, GREATERTHAN140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-allowed):\n");
+//     scanf("%d", (fRide1->accessHeight));
+// }
 
 void readFairgroundRide(tFairgroundRide *fRide, int people) {
     int x = 0;
@@ -97,8 +97,10 @@ int main() {
         readFairgroundRide(&fRide[x], peopleInQue1);
     }
 
-   printf("ENTER THE HEIGHT >> \n");
-   scanf("%d", &height, peopleInQue1);
+    
+
+//    printf("ENTER THE HEIGHT >> \n");
+//    scanf("%d", &height);
    //writeFairgroundRide(elganador, );
 
 }
