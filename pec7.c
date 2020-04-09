@@ -31,10 +31,10 @@ typedef struct {
 //     scanf("%d", (fRide1->accessHeight));
 // }
 
-void readFairgroundRide(tFairgroundRide *fRide, int people) {
+void readFairgroundRide(tFairgroundRide *fRide, int *people) {
     int x = 0;
     printf("ENTER THE PEOPLE IN THE QUEUE OF FAIRGROUND RIDE %d >>\n", x+1);
-    scanf("%d", &people);
+    scanf("%d", &people[x]);
     printf("ENTER DATA FOR FIRST FAIRGROUND RIDE >>\n");
     printf("NAME >>\n");
     scanf("%s", (fRide[x].name));
@@ -85,22 +85,11 @@ void readFairgroundRide(tFairgroundRide *fRide, int people) {
 
 // }
 
-
-
 int main() {
-
-
-    int height, peopleInQue1, peopleInQue2;
+    int height, peopleInQue[2];
     tFairgroundRide fRide[2];
     
     for (int x = 0; x < 2; ++x) {
-        readFairgroundRide(&fRide[x], peopleInQue1);
+        readFairgroundRide(&fRide[x], &peopleInQue[x]);
     }
-
-    
-
-//    printf("ENTER THE HEIGHT >> \n");
-//    scanf("%d", &height);
-   //writeFairgroundRide(elganador, );
-
 }
