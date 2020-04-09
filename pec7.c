@@ -77,9 +77,9 @@ void readFairgroundRide(tFairgroundRide *fRide, int *people) {
 //     return 0;
 // }
 
-// void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide Ride2, int people1, int people2, int height) {
+void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide Ride2, int people1, int people2, int height) {
 
-// }
+}
 
 // copyFairgroundRide() {
 
@@ -92,4 +92,8 @@ int main() {
     for (int x = 0; x < 2; ++x) {
         readFairgroundRide(&fRide[x], &peopleInQue[x]);
     }
+
+    printf("ENTER THE HEIGHT >> \n");
+    scanf("%d", &height);
+    selectFairgroundRide(fRide[0], fRide[1], peopleInQue[0], peopleInQue[1], height);
 }
