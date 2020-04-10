@@ -6,6 +6,7 @@
 
 typedef enum {FORBIDDEN, ALLOWED_WITH_COMPANION, ALLOWED} tFairgroundRideAccess;
 
+/* atraction access requirement */
 typedef struct {
     tFairgroundRideAccess lessThan100;
     tFairgroundRideAccess between100_120;
@@ -13,6 +14,7 @@ typedef struct {
     tFairgroundRideAccess greaterThan140;
 } tFairgroundRideHeightRequirement;
 
+/* atraction requeriments */
 typedef struct {
     char name[MAX_NAME_LEN];
     tFairgroundRideHeightRequirement accessHeight;
@@ -63,21 +65,22 @@ void readFairgroundRide(tFairgroundRide *fRide, tFairgroundRideHeightRequirement
 //     return timeWaiting;
 // }
 
-// int accessWithoutCompanion(tFairgroundRide fRide int *height) {
-//     // height between tFairgroundRideHeightRequirement values
-//     if (height => 100) {
-//         if (height >= 100 && height >= 140) {
-//             //conn compañia
-//         }
-//         else {
-//             //solo
-//         }
-//     }
-//     else {
-//         // no puede entrar
-//     }
-//     return 0;
-// }
+int accessWithoutCompanion(tFairgroundRide fRide, int height) {
+    int value = 0;
+
+    if (height > 100) {
+
+    }
+    else {
+        if(fRide.accessHeight.lessThan100 == 1) {
+            value = 0;
+        }
+        else {
+            value = 1;
+        }
+    }
+    return value;
+}
 
 void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide Ride2, int people1, int people2, int height) {
 
@@ -88,16 +91,19 @@ void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide Ride2, int peo
 // }
 
 int main() {
-    int height, peopleInQue[2];
+    /* variables */
+    int height;
+    int peopleInQue[2];
     tFairgroundRide fRide[2];
     tFairgroundRideHeightRequirement fRideAccess[2];
 
-    
+    /* input and creation dataStruct */
     for (int x = 0; x < 2; ++x) {
         readFairgroundRide(&fRide[x], &peopleInQue[x], &fRideAccess[x]);
     }
 
-    // printf("ENTER THE HEIGHT >> \n");
-    // scanf("%d", &height);
+    printf("ENTER THE HEIGHT >> \n");
+    scanf("%d", &height);
+    accessWithoutCompanion(fRide[0], height);
     // selectFairgroundRide(fRide[0], fRide[1], peopleInQue[0], peopleInQue[1], height);
 }
