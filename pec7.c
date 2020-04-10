@@ -32,7 +32,7 @@ void readFairgroundRideAccess(tFairgroundRideHeightRequirement *fRide) {
     scanf("%d", &(fRide[x].greaterThan140));
 }
 
-void readFairgroundRide(tFairgroundRide *fRide, int *people, tFairgroundRideHeightRequirement *fRideAccess) {
+void readFairgroundRide(tFairgroundRide *fRide, tFairgroundRideHeightRequirement *fRideAccess, int *people) {
     int x = 0;
     printf("ENTER THE PEOPLE IN THE QUEUE OF FAIRGROUND RIDE %d >>\n", x+1);
     scanf("%d", &people[x]);
