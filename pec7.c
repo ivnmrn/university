@@ -25,8 +25,6 @@ typedef struct {
 /* read tFairgroundRide */
 void readFairgroundRide(tFairgroundRide *fRide, int *people) {
     int x = 0;
-    printf("ENTER THE PEOPLE IN THE QUEUE OF FAIRGROUND RIDE %d >>\n", x);
-    scanf("%d", &people[x]);
     printf("ENTER DATA FOR FIRST FAIRGROUND RIDE >>\n");
     printf("NAME >>\n");
     scanf("%s", (fRide[x].name));
@@ -42,6 +40,8 @@ void readFairgroundRide(tFairgroundRide *fRide, int *people) {
     scanf("%d", &(fRide[x].durationTrip));
     printf("NUMBER OF PERSONS ON A TRIP:\n");
     scanf("%d", &(fRide[x].numPersonsTrip));
+    printf("ENTER THE PEOPLE IN THE QUEUE OF FAIRGROUND RIDE %d >>\n", x+1);
+    scanf("%d", &people[x]);
 }
 
 /* write best option */
