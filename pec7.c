@@ -59,36 +59,46 @@ void readFairgroundRide(tFairgroundRide *fRide, tFairgroundRideHeightRequirement
 //     printf("NUMBER OF PERSONS ON A TRIP:\n");
 // }
 
-// int waitingTime(tFairgroundRide fRide, int people) {
-//     int timeWaiting;
-//     int timeWaitingRide = (fRide.durationTrip+TIME_TO_EMPTY+TIME_TO_UP)*(people/fRide.numPersonsTrip);
-//     return timeWaiting;
-// }
+int waitingTime(tFairgroundRide fRide, int people) {
+    int timeWaiting;
+    int timeWaitingRide = (fRide.durationTrip+TIME_TO_EMPTY+TIME_TO_UP)*(people/fRide.numPersonsTrip);
+    return timeWaiting;
+}
 
 int accessWithoutCompanion(tFairgroundRide fRide, int height) {
     int value = 0;
 
     if (height > 100) {
+        if (height > 140) {
+            if (fRide.accessHeight.greaterThan140 == 2) {
+                value = 1;
+            }
+            else {
+                value = 0;
+            }
+        }
+        else if (height > 100 && height <120) {
 
-    }
-    else {
-        if(fRide.accessHeight.lessThan100 == 1) {
-            value = 0;
         }
         else {
-            value = 1;
+
         }
     }
+    else {
+        if (fRide.accessHeight.lessThan100 == 2) {
+            value = 1;
+        }
+        else {
+            value = 0;
+        }
+    }
+
     return value;
 }
 
 void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide Ride2, int people1, int people2, int height) {
 
 }
-
-// copyFairgroundRide() {
-
-// }
 
 int main() {
     /* variables */
@@ -97,9 +107,9 @@ int main() {
     tFairgroundRide fRide[2];
     tFairgroundRideHeightRequirement fRideAccess[2];
 
-    /* input and creation dataStruct */
+    /* input and creation dataStructs */
     for (int x = 0; x < 2; ++x) {
-        readFairgroundRide(&fRide[x], &peopleInQue[x], &fRideAccess[x]);
+        readFairgroundRide(&fRide[x], &fRideAccess[x], &peopleInQue[x]);
     }
 
     printf("ENTER THE HEIGHT >> \n");
