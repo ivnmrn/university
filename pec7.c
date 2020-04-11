@@ -67,30 +67,30 @@ int waitingTime(tFairgroundRide fRide, int people) {
 
 int accessWithoutCompanion(tFairgroundRide fRide, int height) {
 
+    int *result=NULL;
+
     if (height >= 100) {
         if (height >= 100 && height <= 120) {
-
+            result = &(fRide.accessHeight.between100_120);
         }
         else if (height > 120 && height <= 140) {
-
+            result = &(fRide.accessHeight.between120_140);
         }
         else {
-
+            result = &(fRide.accessHeight.greaterThan140);
         }
     }
     else {
-
+        result = &(fRide.accessHeight.lessThan100);
     }
 
-    // if (poiner == 2) {
-    //     pointer = 1;
-    // }
-    // else {
-    //     pointer = 0;
-    // }
-
-    // return pointer;
-
+    if (result == 2) {
+        *result = 1;
+    }
+    else {
+        *result = 0;
+    }
+    return *result;
 }
 
 void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide Ride2, int people1, int people2, int height) {
