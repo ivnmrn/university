@@ -21,11 +21,10 @@ typedef struct {
     int durationTrip;
     int numPersonsTrip;
 } tFairgroundRide;
+
 /* read tFairgroundRide */
 void readFairgroundRide(tFairgroundRide *fRide, int *people) {
     int x = 0;
-    printf("ENTER THE PEOPLE IN THE QUEUE OF FAIRGROUND RIDE %d >>\n", x+1);
-    scanf("%d", &people[x]);
     printf("ENTER DATA FOR FIRST FAIRGROUND RIDE >>\n");
     printf("NAME >>\n");
     scanf("%s", (fRide[x].name));
@@ -41,20 +40,25 @@ void readFairgroundRide(tFairgroundRide *fRide, int *people) {
     scanf("%d", &(fRide[x].durationTrip));
     printf("NUMBER OF PERSONS ON A TRIP:\n");
     scanf("%d", &(fRide[x].numPersonsTrip));
+    printf("ENTER THE PEOPLE IN THE QUEUE OF FAIRGROUND RIDE %d >>\n", x+1);
+    scanf("%d", &people[x]);
 }
 
-// void writeFairgroundRide() {
-//     printf("RESULTS: \n");
-//     printf("NAME %s\n", name);
-//     printf("ACCES HEIGHT, LESSTHAN100 (0-FORBIDDEN,1-ALLOWED_WITH_COMPANION, 2 -ALLOWED):\n");
-//     printf("ACCES HEIGHT, BETWEEN100_120 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2 -ALLOWED):\n");
-//     printf("ACCES HEIGHT, BETWEEN120_140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED):\n");
-//     printf("ACCES HEIGHT, GREATERTHAN140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED):\n");
-//     printf("TRIP DURATION:\n");
-//     printf("NUMBER OF PERSONS ON A TRIP:\n");
-// }
+/* write best option */
+void writeFairgroundRide(tFairgroundRide fRide) {
+    printf("RESULTS: \n");
+    printf("NAME %s\n", fRide.name);
+    printf("ACCES HEIGHT, LESSTHAN100 (0-FORBIDDEN,1-ALLOWED_WITH_COMPANION, 2 -ALLOWED): %d\n", fRide.accessHeight.lessThan100);
+    printf("ACCES HEIGHT, BETWEEN100_120 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2 -ALLOWED): %d\n", fRide.accessHeight.between100_120);
+    printf("ACCES HEIGHT, BETWEEN120_140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED): %d\n", fRide.accessHeight.between120_140);
+    printf("ACCES HEIGHT, GREATERTHAN140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED): %d\n", fRide.accessHeight.greaterThan140);
+    printf("TRIP DURATION: %d\n", fRide.durationTrip);
+    printf("NUMBER OF PERSONS ON A TRIP: %d\n", fRide.numPersonsTrip);
+}
+
 
 int waitingTime(tFairgroundRide fRide, int people) {
+    int x = 0;
     int timeWaiting;
     int timeWaitingRide = (fRide.durationTrip+TIME_TO_EMPTY+TIME_TO_UP)*(people/fRide.numPersonsTrip);
     return timeWaiting;
@@ -88,15 +92,41 @@ int accessWithoutCompanion(tFairgroundRide fRide, int height) {
     return *result;
 }
 
-void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide Ride2, int people1, int people2, int height) {
+void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide fRide2, int people1, int people2, int height) {
+    int accessRide1, accessRide2, timeWitingRide1, timeWitingRide2;
 
+    accessRide1 = accessWithoutCompanion(fRide1, height);
+    accessRide2 = accessWithoutCompanion(fRide2, height);
+    timeWitingRide1 = waitingTime(fRide1, people1);
+    timeWitingRide1 = waitingTime(fRide2, people2);
+
+    if (timeWitingRide1 == timeWitingRide2) {
+        if (accessRide1 == 1 && accessRide2 == 1) {
+            writeFairgroundRide(fRide1);
+        }
+        else if (accessRide2 == 1) {
+            writeFairgroundRide(fRide2);
+        }
+        else {
+            writeFairgroundRide(fRide1);
+        }
+    }
+    else {
+        if (timeWitingRide1 > timeWitingRide2) {
+            writeFairgroundRide(fRide1);
+        }
+        else {
+            writeFairgroundRide(fRide2);
+        }
+    }
 }
 
 int main() {
     /* variables */
-    int height;
+    int height, x;
     int peopleInQue[2];
     tFairgroundRide fRide[2];
+
     /* input and creation dataStructs */
     for (int x = 0; x < 2; ++x) {
         readFairgroundRide(&fRide[x], &peopleInQue[x]);
@@ -104,6 +134,5 @@ int main() {
 
     printf("ENTER THE HEIGHT >> \n");
     scanf("%d", &height);
-    accessWithoutCompanion(fRide[0], height);
-    // selectFairgroundRide(fRide[0], fRide[1], peopleInQue[0], peopleInQue[1], height);
+    selectFairgroundRide(fRide[0], fRide[1], peopleInQue[0], peopleInQue[1], height);
 }
