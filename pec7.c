@@ -3,6 +3,8 @@
 #define MAX_NAME_LEN 15
 #define TIME_TO_EMPTY 60
 #define TIME_TO_UP 120
+#define NUMBER_OF_STRING 2
+#define MAX_STRING_SIZE 7
 
 typedef enum {FORBIDDEN, ALLOWED_WITH_COMPANION, ALLOWED} tFairgroundRideAccess;
 
@@ -23,45 +25,43 @@ typedef struct {
 } tFairgroundRide;
 
 /* read tFairgroundRide */
-void readFairgroundRide(tFairgroundRide *fRide, int *people) {
+void readFairgroundRide(tFairgroundRide *fRide, int *people, char orderRide[NUMBER_OF_STRING]) {
     int x = 0;
-    printf("ENTER THE PEOPLE IN THE QUEUE OF FAIRGROUND RIDE %d >>\n", x);
-    scanf("%d", &people[x]);
-    printf("ENTER DATA FOR FIRST FAIRGROUND RIDE >>\n");
+    printf("ENTER DATA FOR %s FAIRGROUND RIDE >>\n", orderRide);
     printf("NAME >>\n");
     scanf("%s", (fRide[x].name));
-    printf("ACCES HEIGHT, LESSTHAN100 (0-FORBIDDEN,1-ALLOWED_WITH_COMPANION, 2 -ALLOWED):\n");
+    printf("ACCES HEIGHT, LESSTHAN100 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED) >>\n");
     scanf("%d", &(fRide[x].accessHeight.lessThan100));
-    printf("ACCES HEIGHT, BETWEEN100_120 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2 -ALLOWED):\n");
+    printf("ACCES HEIGHT, BETWEEN100_120 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED) >>\n");
     scanf("%d", &(fRide[x].accessHeight.between100_120));
-    printf("ACCES HEIGHT, BETWEEN120_140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED):\n");
+    printf("ACCES HEIGHT, BETWEEN120_140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED) >>\n");
     scanf("%d", &(fRide[x].accessHeight.between120_140));
-    printf("ACCES HEIGHT, GREATERTHAN140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED):\n");
+    printf("ACCES HEIGHT, GREATERTHAN140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED) >>\n");
     scanf("%d", &(fRide[x].accessHeight.greaterThan140));
-    printf("TRIP DURATION:\n");
+    printf("TRIP DURATION >>\n");
     scanf("%d", &(fRide[x].durationTrip));
-    printf("NUMBER OF PERSONS ON A TRIP:\n");
+    printf("NUMBER OF PERSONS ON A TRIP >> \n");
     scanf("%d", &(fRide[x].numPersonsTrip));
+    printf("ENTER THE PEOPLE IN THE QUEUE OF FAIRGROUND RIDE 1  >>\n");
+    scanf("%d", &people[x]);
 }
 
 /* write best option */
 void writeFairgroundRide(tFairgroundRide fRide) {
     printf("RESULTS: \n");
-    printf("NAME %s\n", fRide.name);
-    printf("ACCES HEIGHT, LESSTHAN100 (0-FORBIDDEN,1-ALLOWED_WITH_COMPANION, 2 -ALLOWED): %d\n", fRide.accessHeight.lessThan100);
-    printf("ACCES HEIGHT, BETWEEN100_120 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2 -ALLOWED): %d\n", fRide.accessHeight.between100_120);
-    printf("ACCES HEIGHT, BETWEEN120_140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED): %d\n", fRide.accessHeight.between120_140);
-    printf("ACCES HEIGHT, GREATERTHAN140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED): %d\n", fRide.accessHeight.greaterThan140);
+    printf("NAME: %s\n", fRide.name);
+    printf("ACCES HEIGHT, LESSTHAN100 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED) >> %d\n", fRide.accessHeight.lessThan100);
+    printf("ACCES HEIGHT, BETWEEN100_120 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED) >> %d\n", fRide.accessHeight.between100_120);
+    printf("ACCES HEIGHT, BETWEEN120_140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED) >> %d\n", fRide.accessHeight.between120_140);
+    printf("ACCES HEIGHT, GREATERTHAN140 (0-FORBIDDEN, 1-ALLOWED_WITH_COMPANION, 2-ALLOWED) >> %d\n", fRide.accessHeight.greaterThan140);
     printf("TRIP DURATION: %d\n", fRide.durationTrip);
     printf("NUMBER OF PERSONS ON A TRIP: %d\n", fRide.numPersonsTrip);
 }
 
 
 int waitingTime(tFairgroundRide fRide, int people) {
-    int x = 0;
-    int timeWaiting;
-    int timeWaitingRide = (fRide.durationTrip+TIME_TO_EMPTY+TIME_TO_UP)*(people/fRide.numPersonsTrip);
-    return timeWaiting;
+    int waiting = (fRide.durationTrip+TIME_TO_EMPTY+TIME_TO_UP)*(people/fRide.numPersonsTrip);
+    return waiting;
 }
 
 int accessWithoutCompanion(tFairgroundRide fRide, int height) {
@@ -82,7 +82,6 @@ int accessWithoutCompanion(tFairgroundRide fRide, int height) {
     else {
         result = &(fRide.accessHeight.lessThan100);
     }
-
     if (*result == 2) {
         *result = 1;
     }
@@ -98,13 +97,10 @@ void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide fRide2, int pe
     accessRide1 = accessWithoutCompanion(fRide1, height);
     accessRide2 = accessWithoutCompanion(fRide2, height);
     timeWitingRide1 = waitingTime(fRide1, people1);
-    timeWitingRide1 = waitingTime(fRide2, people2);
+    timeWitingRide2 = waitingTime(fRide2, people2);
 
-    if (timeWitingRide1 == timeWitingRide2) {
-        if (accessRide1 == 1 && accessRide2 == 1) {
-            writeFairgroundRide(fRide1);
-        }
-        else if (accessRide2 == 1) {
+    if (accessRide1 == accessRide2) {
+        if (timeWitingRide1 > timeWitingRide2) {
             writeFairgroundRide(fRide2);
         }
         else {
@@ -112,11 +108,11 @@ void selectFairgroundRide(tFairgroundRide fRide1, tFairgroundRide fRide2, int pe
         }
     }
     else {
-        if (timeWitingRide1 > timeWitingRide2) {
-            writeFairgroundRide(fRide1);
+        if (accessRide1 < accessRide2) {
+            writeFairgroundRide(fRide2);
         }
         else {
-            writeFairgroundRide(fRide2);
+            writeFairgroundRide(fRide1);
         }
     }
 }
@@ -126,10 +122,11 @@ int main() {
     int height, x;
     int peopleInQue[2];
     tFairgroundRide fRide[2];
+    char orderRide[NUMBER_OF_STRING][MAX_STRING_SIZE] = {"FIRST", "SECOND"};
 
     /* input and creation dataStructs */
     for (int x = 0; x < 2; ++x) {
-        readFairgroundRide(&fRide[x], &peopleInQue[x]);
+        readFairgroundRide(&fRide[x], &peopleInQue[x], orderRide[x]);
     }
 
     printf("ENTER THE HEIGHT >> \n");
