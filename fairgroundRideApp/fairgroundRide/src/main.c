@@ -14,9 +14,9 @@ int main() {
         readFairgroundRide(&fRide[x], &peopleInQue[x], orderRide[x]);
     }
 	
-	/* input height */
+    /* input height */
     printf("ENTER THE HEIGHT >> \n");
     scanf("%d", &height);
-	/* call to selectFairgroundRide */
+    /* call to selectFairgroundRide */
     selectFairgroundRide(fRide[0], fRide[1], peopleInQue[0], peopleInQue[1], height);
 }
