@@ -1,0 +1,3 @@
+/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/CMakeFiles/PAC8.dir

@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../PAC8/include/fairgroundRide.h
+
+/Users/ivan/Desktop/C/university/PAC8/PAC8/source/fairgroundRide.c
+stdio.h
+-
+string.h
+-
+fairgroundRide.h
+/Users/ivan/Desktop/C/university/PAC8/PAC8/source/fairgroundRide.h
+
+/Users/ivan/Desktop/C/university/PAC8/PAC8/source/main.c
+stdio.h
+-
+string.h
+-
+fairgroundRide.h
+/Users/ivan/Desktop/C/university/PAC8/PAC8/source/fairgroundRide.h
+

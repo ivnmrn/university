@@ -1,0 +1,2 @@
+-I/Users/ivan/Desktop/C/university/PAC8/PAC8
+-I/Users/ivan/Desktop/C/university/PAC8/PAC8/include

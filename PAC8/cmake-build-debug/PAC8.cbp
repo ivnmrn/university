@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="PAC8"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PAC8">
+				<Option output="/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/PAC8" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/ivan/Desktop/C/university/PAC8/."/>
+					<Add directory="/Users/ivan/Desktop/C/university/PAC8/PAC8"/>
+					<Add directory="/Users/ivan/Desktop/C/university/PAC8/PAC8/include"/>
+					<Add directory="/Users/ivan/Desktop/C/university/PAC8/PAC8/source"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 PAC8"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PAC8/fast">
+				<Option output="/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/PAC8" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/ivan/Desktop/C/university/PAC8/."/>
+					<Add directory="/Users/ivan/Desktop/C/university/PAC8/PAC8"/>
+					<Add directory="/Users/ivan/Desktop/C/university/PAC8/PAC8/include"/>
+					<Add directory="/Users/ivan/Desktop/C/university/PAC8/PAC8/source"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 PAC8/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/ivan/Desktop/C/university/PAC8/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/Makefile">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8.workspace">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/Debug/PAC8">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/Debug/source_fairgroundRide.c.o">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/Debug/source_fairgroundRide.c.o.d">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/Debug/source_main.c.o">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/Debug/source_main.c.o.d">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/PAC8.mk">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/PAC8.project">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/PAC8.txt">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/compile_flags.txt">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/data.txt">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/fRide1.txt">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/include/fairgroundRide.h">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/source/fairgroundRide.c">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/PAC8/source/main.c">
+			<Option target="PAC8"/>
+		</Unit>
+		<Unit filename="/Users/ivan/Desktop/C/university/PAC8/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
