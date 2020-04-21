@@ -89,7 +89,7 @@ void fairgroundRidesTableInitialize(tFairgroundRidesTable *tFairgroundRide) {
 /* find in the table the area */
 void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, tFairgroundRideCategory category, tFairgroundRidesTable *myfRidesTable) {
 
-	fairgroundRidesTableInitialize(&myfRidesTable);
+	fairgroundRidesTableInitialize(myfRidesTable);
 
 	for (int x = 0; x < fRidesTable->nFairgroundRides; ++x) {
 		if (fRidesTable->fairgroundRides[x].areaMap == area && fRidesTable->fairgroundRides[x].category == category ) {
@@ -121,4 +121,6 @@ int myChoice(tFairgroundRidesTable *myfRideTable) {
 		}
 	}
 	*/
+	return 0;
+
 }

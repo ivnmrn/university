@@ -5,21 +5,21 @@
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
       <wxString Value="/Users/ivan/Desktop/C/university/PAC8/PAC8/source/fairgroundRide.c" Name="FileName"/>
-      <int Value="454" Name="FirstVisibleLine"/>
-      <int Value="58" Name="CurrentLine"/>
+      <int Value="90" Name="FirstVisibleLine"/>
+      <int Value="100" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/Users/ivan/Desktop/C/university/PAC8/PAC8/source/main.c" Name="FileName"/>
-      <int Value="72" Name="FirstVisibleLine"/>
+      <int Value="67" Name="FirstVisibleLine"/>
       <int Value="24" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="/Users/ivan/Desktop/C/university/PAC8/PAC8/include/fairgroundRide.h" Name="FileName"/>
-      <int Value="604" Name="FirstVisibleLine"/>
+      <int Value="626" Name="FirstVisibleLine"/>
       <int Value="31" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
