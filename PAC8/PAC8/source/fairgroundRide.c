@@ -103,24 +103,14 @@ void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, t
 /* select best option */
 int myChoice(tFairgroundRidesTable *myfRideTable) {
 
-	printf("tamaño: %d \n", myfRideTable->nFairgroundRides);
-	printf("%c\n", myfRideTable->fairgroundRides[0].areaMap);
+	int postionTable = 0;
 
-	/* hay que ordenar las atracciones y buscar del reves la atraccion
-	con mayor durationTrip si hay empate 
-	hay que mirar la que tiene menor averageWaitingTime */
-
-
-	/* [1,2,3,4,5,6,7,8,8,9,9] 
-	(int b = 0; b > strlen(lista); --b) {
-		if (lista[b] != lista[b-1]) {
-			ponemos aqui el valos lista[b] como mejor valor
-		}
-		else {
-			si son iguales hay que comparar ahora loss tiempos
+	for (int x = 0; x<myfRideTable->nFairgroundRides; ++x) {
+		if ((myfRideTable->fairgroundRides[x+1].durationTrip > myfRideTable->fairgroundRides[x].durationTrip) ||
+		(myfRideTable->fairgroundRides[x+1].durationTrip == myfRideTable->fairgroundRides[x].durationTrip && 
+		myfRideTable->fairgroundRides[x+1].averageWaitingTime < myfRideTable->fairgroundRides[x].averageWaitingTime)) {
+			postionTable += 1;
 		}
 	}
-	*/
-	return 0;
-
+	return postionTable;
 }

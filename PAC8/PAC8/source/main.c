@@ -4,7 +4,7 @@
 
 //main algorithm
 int main(int argc, char **argv){
-    
+
     char fileName[MAX_NAME];
     char areaMap;
     int category;
@@ -12,8 +12,8 @@ int main(int argc, char **argv){
     tFairgroundRidesTable fRideTableIn, fRideTableOut;
 
     /* initialize  tables */
-    fairgroundRidesTableInitialize(fRideTableIn.nFairgroundRides);
-    fairgroundRidesTableInitialize(fRideTableOut.nFairgroundRides);
+    fairgroundRidesTableInitialize(&fRideTableIn);
+    fairgroundRidesTableInitialize(&fRideTableOut);
 
     /* load the parameters from file to table */
     printf("LOAD DATA FROM FILE. ENTER THE NAME OF THE FILE >>\n");
@@ -29,6 +29,7 @@ int main(int argc, char **argv){
     scanf("%d", &category);
     fairgroundRidesTableFilter(&fRideTableIn, areaMap, category, &fRideTableOut);
     
-    /* select the best option */
-    myChoice(&fRideTableOut);
+    /* select and write the best option */
+    int position = myChoice(&fRideTableOut);
+    writeFairgroundRide(fRideTableOut.fairgroundRides[position]);
 }
