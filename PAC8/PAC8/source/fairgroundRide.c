@@ -103,11 +103,11 @@ void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, t
 int myChoice(tFairgroundRidesTable myfRideTable) {
 
 	int postionTable = 0;
-
-	for (int x = 0; x<(myfRideTable.nFairgroundRides-1); ++x) {
-		if ((myfRideTable.fairgroundRides[x+1].durationTrip > myfRideTable.fairgroundRides[postionTable].durationTrip) ||
-		(myfRideTable.fairgroundRides[x+1].durationTrip == myfRideTable.fairgroundRides[postionTable].durationTrip && 
-		myfRideTable.fairgroundRides[x+1].averageWaitingTime < myfRideTable.fairgroundRides[postionTable].averageWaitingTime)) {
+	
+	for (int x = 1; x<(myfRideTable.nFairgroundRides); ++x) {
+		if ((myfRideTable.fairgroundRides[x].durationTrip > myfRideTable.fairgroundRides[postionTable].durationTrip) ||
+		(myfRideTable.fairgroundRides[x].durationTrip == myfRideTable.fairgroundRides[postionTable].durationTrip && 
+		myfRideTable.fairgroundRides[x].averageWaitingTime < myfRideTable.fairgroundRides[postionTable].averageWaitingTime)) {
 			postionTable += 1;
 		}
 	}
