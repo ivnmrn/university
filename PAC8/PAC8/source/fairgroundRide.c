@@ -81,12 +81,10 @@ void fairgroundRidesTableAddElement(tFairgroundRidesTable *fRidesTable, tFairgro
 	}
 }
 
-/* inizialize table */
 void fairgroundRidesTableInitialize(tFairgroundRidesTable *tFairgroundRide) {
     tFairgroundRide->nFairgroundRides = 0;
 }
 
-/* find in the table the area */
 void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, tFairgroundRideCategory category, tFairgroundRidesTable *myfRidesTable) {
 
 	fairgroundRidesTableInitialize(myfRidesTable);
@@ -99,7 +97,6 @@ void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, t
 	}
 }
 
-/* select best option */
 int myChoice(tFairgroundRidesTable *myfRideTable) {
 
 	int postionTable = 0;

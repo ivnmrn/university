@@ -23,11 +23,19 @@ typedef struct {
 }tFairgroundRidesTable;
 
 //define function headers
+/* output of fairground ride */
 void writeFairgroundRide(tFairgroundRide fRide);
+/* copy from one fairground ride to other */
 void copyFairgroundRide(tFairgroundRide fRideSrc, tFairgroundRide *fRideDst);
+/* Read fairground data */
 void getFairgroundRideObject(const char *str, tFairgroundRide *fRide);
+/* Add the new fairground ride at the end of the table */
 void fairgroundRidesTableAddElement(tFairgroundRidesTable *fRidesTable, tFairgroundRide fRide);
-void fairgroundRidesTableLoadDataFromFile(tFairgroundRidesTable *fRidesTable,const char* filename);
+/* Open the input file and load on it the information */
+void fairgroundRidesTableLoadDataFromFile(tFairgroundRidesTable *fRidesTable, const char* filename);
+/* Initialize table */
 void fairgroundRidesTableInitialize(tFairgroundRidesTable *tFairgroundRide);
+/* Find in the table the correct values for area and category */
 void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, tFairgroundRideCategory category, tFairgroundRidesTable *myfRidesTable);
+/* Select best option */
 int myChoice(tFairgroundRidesTable *myfRideTable);
