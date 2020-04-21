@@ -93,7 +93,6 @@ void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, t
 
 	for (int x = 0; x < fRidesTable->nFairgroundRides; ++x) {
 		if (fRidesTable->fairgroundRides[x].areaMap == area && fRidesTable->fairgroundRides[x].category == category ) {
-			/* Add the matchs in a new table */
 			copyFairgroundRide(fRidesTable->fairgroundRides[x], &myfRidesTable->fairgroundRides[x]);
 			myfRidesTable->nFairgroundRides++;
 		}
