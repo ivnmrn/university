@@ -5,7 +5,7 @@
 //main algorithm
 int main(int argc, char **argv){
 
-    char fileName[MAX_NAME];
+    char fileName[22];
     char areaMap;
     int category;
 
@@ -28,8 +28,14 @@ int main(int argc, char **argv){
     printf("ENTER THE CATEGORY (0-STRONG, 1-MODERATE, 2-CHILDISH) >>\n");
     scanf("%d", &category);
     fairgroundRidesTableFilter(&fRideTableIn, areaMap, category, &fRideTableOut);
-    
-    /* select and write the best option */
-    int position = myChoice(&fRideTableOut);
-    writeFairgroundRide(fRideTableOut.fairgroundRides[position]);
+
+    /* showing the results of best option */
+	printf("RESULTS:\n");
+    if (fRideTableOut.nFairgroundRides!=0) {
+        int position = myChoice(fRideTableOut);
+        writeFairgroundRide(fRideTableOut.fairgroundRides[position]);
+    }
+    else {
+        printf("NO FAIRGROUND RIDE FOUND!\n");
+    }
 }

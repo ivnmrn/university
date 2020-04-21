@@ -38,4 +38,4 @@ void fairgroundRidesTableInitialize(tFairgroundRidesTable *tFairgroundRide);
 /* Find in the table the correct values for area and category */
 void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, tFairgroundRideCategory category, tFairgroundRidesTable *myfRidesTable);
 /* Select best option */
-int myChoice(tFairgroundRidesTable *myfRideTable);
+int myChoice(tFairgroundRidesTable myfRideTable);

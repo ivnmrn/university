@@ -46,7 +46,6 @@ void fairgroundRidesTableLoadDataFromFile(tFairgroundRidesTable *fRidesTable,con
 
 	/* Open the input file */
 	if((fin=fopen(filename,"r"))!=NULL) {
-		printf("FAIRGROUND RIDES SUCCESSFULLY LOADED!\n");
 		/* Read all the fairground rides */
 		while(!feof(fin) && fRidesTable->nFairgroundRides<MAX_FRIDES) {
 			/* Remove any content from the line */
@@ -64,6 +63,7 @@ void fairgroundRidesTableLoadDataFromFile(tFairgroundRidesTable *fRidesTable,con
 		}
 		/* Close the file */
 		fclose(fin);
+		printf("FAIRGROUND RIDES SUCCESSFULLY LOADED!\n");
 	}
 }
 
@@ -86,24 +86,28 @@ void fairgroundRidesTableInitialize(tFairgroundRidesTable *tFairgroundRide) {
 
 void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, tFairgroundRideCategory category, tFairgroundRidesTable *myfRidesTable) {
 
+	int positionMyTable = 0;
+
 	fairgroundRidesTableInitialize(myfRidesTable);
 
 	for (int x = 0; x < fRidesTable->nFairgroundRides; ++x) {
 		if (fRidesTable->fairgroundRides[x].areaMap == area && fRidesTable->fairgroundRides[x].category == category ) {
-			copyFairgroundRide(fRidesTable->fairgroundRides[x], &myfRidesTable->fairgroundRides[x]);
+			/* Add the matchs in a new table */
+			copyFairgroundRide(fRidesTable->fairgroundRides[x], &myfRidesTable->fairgroundRides[positionMyTable]);
+			positionMyTable += 1;
 			myfRidesTable->nFairgroundRides++;
 		}
 	}
 }
 
-int myChoice(tFairgroundRidesTable *myfRideTable) {
+int myChoice(tFairgroundRidesTable myfRideTable) {
 
 	int postionTable = 0;
 
-	for (int x = 0; x<myfRideTable->nFairgroundRides; ++x) {
-		if ((myfRideTable->fairgroundRides[x+1].durationTrip > myfRideTable->fairgroundRides[x].durationTrip) ||
-		(myfRideTable->fairgroundRides[x+1].durationTrip == myfRideTable->fairgroundRides[x].durationTrip && 
-		myfRideTable->fairgroundRides[x+1].averageWaitingTime < myfRideTable->fairgroundRides[x].averageWaitingTime)) {
+	for (int x = 0; x<(myfRideTable.nFairgroundRides-1); ++x) {
+		if ((myfRideTable.fairgroundRides[x+1].durationTrip > myfRideTable.fairgroundRides[postionTable].durationTrip) ||
+		(myfRideTable.fairgroundRides[x+1].durationTrip == myfRideTable.fairgroundRides[postionTable].durationTrip && 
+		myfRideTable.fairgroundRides[x+1].averageWaitingTime < myfRideTable.fairgroundRides[postionTable].averageWaitingTime)) {
 			postionTable += 1;
 		}
 	}
