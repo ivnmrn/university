@@ -67,7 +67,6 @@ void fairgroundRidesTableLoadDataFromFile(tFairgroundRidesTable *fRidesTable,con
 	}
 }
 
-
 void fairgroundRidesTableAddElement(tFairgroundRidesTable *fRidesTable, tFairgroundRide fRide) {
 
 	/* Check if there is space enough for the new fairground ride */
