@@ -11,8 +11,8 @@ int main(int argc, char **argv){
 
     tFairgroundRidesTable fRideTableIn, fRideTableOut;
 
-    fRideTableIn.nFairgroundRides = 0;
-    fRideTableIn.nFairgroundRides = 0;
+	fairgroundRidesTableInitialize(&fRideTableIn);
+	fairgroundRidesTableInitialize(&fRideTableOut);
 
     printf("LOAD DATA FROM FILE. ENTER THE NAME OF THE FILE >>\n");
     scanf("%s", fileName);
@@ -24,5 +24,6 @@ int main(int argc, char **argv){
     printf("%c\n", areaMap);
     printf("ENTER THE CATEGORY (0-STRONG, 1-MODERATE, 2-CHILDISH) >>\n");
     scanf("%d", &category);
-    fairgroundRidesTableFilter(&fRideTableIn, areaMap, category);
+    fairgroundRidesTableFilter(&fRideTableIn, areaMap, category, &fRideTableOut);
+    myChoice(&fRideTableOut);
 }

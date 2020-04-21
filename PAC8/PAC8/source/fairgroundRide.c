@@ -87,22 +87,17 @@ void fairgroundRidesTableInitialize(tFairgroundRidesTable *tFairgroundRide) {
 }
 
 /* find in the table the area */
-void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, tFairgroundRideCategory category) {
+void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, tFairgroundRideCategory category, tFairgroundRidesTable *myfRidesTable) {
 
-	//HAY QUE CAMBIARLO LLAMANDO A LA FUNCION
-	tFairgroundRidesTable myfRidesTable;
-
-	myfRidesTable.nFairgroundRides = 0;
-
+	fairgroundRidesTableInitialize(&myfRidesTable);
 
 	for (int x = 0; x < fRidesTable->nFairgroundRides; ++x) {
 		if (fRidesTable->fairgroundRides[x].areaMap == area && fRidesTable->fairgroundRides[x].category == category ) {
-			/* Add the match */
-			copyFairgroundRide(fRidesTable->fairgroundRides[x], &myfRidesTable.fairgroundRides[x]);
-			myfRidesTable.nFairgroundRides++;
+			/* Add the matchs in a new table */
+			copyFairgroundRide(fRidesTable->fairgroundRides[x], &myfRidesTable->fairgroundRides[x]);
+			myfRidesTable->nFairgroundRides++;
 		}
 	}
-	myChoice(&myfRidesTable);
 }
 
 /* select best option */

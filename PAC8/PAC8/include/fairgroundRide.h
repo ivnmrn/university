@@ -29,5 +29,5 @@ void getFairgroundRideObject(const char *str, tFairgroundRide *fRide);
 void fairgroundRidesTableAddElement(tFairgroundRidesTable *fRidesTable, tFairgroundRide fRide);
 void fairgroundRidesTableLoadDataFromFile(tFairgroundRidesTable *fRidesTable,const char* filename);
 void fairgroundRidesTableInitialize(tFairgroundRidesTable *tFairgroundRide);
-void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, tFairgroundRideCategory category);
+void fairgroundRidesTableFilter(tFairgroundRidesTable *fRidesTable, char area, tFairgroundRideCategory category, tFairgroundRidesTable *myfRidesTable);
 int myChoice(tFairgroundRidesTable *myfRideTable);
