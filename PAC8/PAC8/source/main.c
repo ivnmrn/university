@@ -18,19 +18,19 @@ int main(int argc, char **argv){
     /* load the parameters from file to table */
     printf("LOAD DATA FROM FILE. ENTER THE NAME OF THE FILE >>\n");
     scanf("%s", fileName);
-	getchar();
+    getchar();
     fairgroundRidesTableLoadDataFromFile(&fRideTableIn, fileName);
 
     /* filter the requires parameters */ 
     printf("ENTER THE AREA OF THE MAP (A CHARACTER) >>\n");
     scanf("%c", &areaMap);
-	getchar();
+    getchar();
     printf("ENTER THE CATEGORY (0-STRONG, 1-MODERATE, 2-CHILDISH) >>\n");
     scanf("%d", &category);
     fairgroundRidesTableFilter(&fRideTableIn, areaMap, category, &fRideTableOut);
 
     /* showing the results of best option */
-	printf("RESULTS:\n");
+    printf("RESULTS:\n");
     if (fRideTableOut.nFairgroundRides!=0) {
         int position = myChoice(fRideTableOut);
         writeFairgroundRide(fRideTableOut.fairgroundRides[position]);
