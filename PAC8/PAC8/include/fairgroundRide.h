@@ -2,9 +2,6 @@
 #define MAX_NAME 15+1
 #define MAX_LINE 514
 #define MAX_FRIDES 150
-#define FIRST 1
-#define SECOND 2
-
 
 //type declarations
 typedef enum {STRONG, MODERATE, CHILDISH} tFairgroundRideCategory;

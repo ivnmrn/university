@@ -5,7 +5,7 @@
 //main algorithm
 int main(int argc, char **argv){
 
-    char fileName[22];
+    char fileName[MAX_NAME];
     char areaMap;
     int category;
 

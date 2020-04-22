@@ -104,7 +104,7 @@ int myChoice(tFairgroundRidesTable myfRideTable) {
 
 	int postionTable = 0;
 	
-	for (int x = 1; x<(myfRideTable.nFairgroundRides); ++x) {
+	for (int x = 1; x<myfRideTable.nFairgroundRides; ++x) {
 		if ((myfRideTable.fairgroundRides[x].durationTrip > myfRideTable.fairgroundRides[postionTable].durationTrip) ||
 		(myfRideTable.fairgroundRides[x].durationTrip == myfRideTable.fairgroundRides[postionTable].durationTrip && 
 		myfRideTable.fairgroundRides[x].averageWaitingTime < myfRideTable.fairgroundRides[postionTable].averageWaitingTime)) {
