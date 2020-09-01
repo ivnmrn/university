@@ -4,8 +4,8 @@
 
 
 void writeFairgroundRide(tFairgroundRide fRide){
-    printf("NAME: %s\n", fRide.name);
-    printf("CATEGORY: %d\n", fRide.category);
+	printf("NAME: %s\n", fRide.name);
+	printf("CATEGORY: %d\n", fRide.category);
 	printf("AREA OF THE MAP: %c\n", fRide.areaMap);
 	printf("DURATION OF THE TRIP: %d\n", fRide.durationTrip);
 	printf("AVERAGE WAITING TIME: %d\n", fRide.averageWaitingTime);
