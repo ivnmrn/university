@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="UOCThemePark" Database="" Version="10.0.0">
+  <Project Name="UOCThemePark" Path="UOCThemePark.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Menu" Selected="no">
+      <Environment/>
+      <Project Name="UOCThemePark" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Test" Selected="yes">
+      <Environment/>
+      <Project Name="UOCThemePark" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
